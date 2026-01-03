@@ -1,0 +1,285 @@
+/* Container Styles */
+.date-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.date-container.date-display--fullscreen {
+  padding: 4rem;
+}
+
+.date-container.date-display--overlay {
+  position: absolute;
+  padding: 0;
+}
+
+/* Overlay Positioning */
+.date-display--position-top-left {
+  top: 0;
+  left: 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 2rem;
+}
+
+.date-display--position-top-right {
+  top: 0;
+  right: 0;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 2rem;
+}
+
+.date-display--position-bottom-left {
+  bottom: 0;
+  left: 0;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 2rem;
+}
+
+.date-display--position-bottom-right {
+  bottom: 0;
+  right: 0;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 2rem;
+}
+
+.date-display--position-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Base Date Display */
+.date-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 3rem 5rem;
+  border-radius: 2rem;
+  transition: all 0.3s ease;
+}
+
+.date-display__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.date-display__time {
+  font-size: 7rem;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.date-display__date {
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.date-display__empty {
+  font-size: 2.5rem;
+  opacity: 0.5;
+  font-style: italic;
+}
+
+.date-display__error {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  background: rgba(255, 100, 100, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* 7-Segment Digital Display Effect */
+.date-display__time--digital {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes digital-flicker {
+  0% {
+    opacity: 0.97;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Minimal Style */
+.date-display--minimal {
+  padding: 2rem 4rem;
+  border-radius: 1rem;
+}
+
+.date-display--minimal .date-display__time {
+  font-size: 6rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+.date-display--minimal .date-display__date {
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+/* Bold Style */
+.date-display--bold {
+  padding: 4rem 6rem;
+  border-radius: 2.5rem;
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.3);
+}
+
+.date-display--bold .date-display__time {
+  font-size: 8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.date-display--bold .date-display__date {
+  font-size: 4rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+/* Elegant Style */
+.date-display--elegant {
+  padding: 3.5rem 5.5rem;
+  border-radius: 1.5rem;
+  border: 0.2rem solid currentColor;
+  box-shadow: 
+    0 0 0 0.5rem rgba(255, 255, 255, 0.1),
+    0 1rem 3rem rgba(0, 0, 0, 0.2);
+}
+
+.date-display--elegant .date-display__time {
+  font-size: 7rem;
+  font-weight: 400;
+  font-family: 'Georgia', serif;
+  letter-spacing: 0.03em;
+}
+
+.date-display--elegant .date-display__date {
+  font-size: 3.5rem;
+  font-weight: 400;
+  font-family: 'Georgia', serif;
+  letter-spacing: 0.03em;
+}
+
+/* Digital/LED Style */
+.date-display--digital {
+  padding: 3rem 5rem;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, #1a2a1a 0%, #0d150d 100%) !important;
+  box-shadow: 
+    inset 0 0 3rem rgba(0, 0, 0, 0.8),
+    inset 0 0 1rem rgba(0, 255, 0, 0.1),
+    0 0 2rem rgba(0, 255, 0, 0.3),
+    0 1rem 3rem rgba(0, 0, 0, 0.5);
+  border: 0.2rem solid rgba(0, 80, 0, 0.5);
+}
+
+.date-display--digital .date-display__time {
+  margin-bottom: 0.5rem;
+}
+
+.date-display--digital .date-display__date {
+  font-size: 3rem;
+  font-weight: 500;
+  font-family: 'Courier New', 'Consolas', monospace;
+  color: #00ff00 !important;
+  letter-spacing: 0.08em;
+  text-shadow: 
+    0 0 0.5rem #00ff00,
+    0 0 1rem #00ff00;
+  opacity: 0.9;
+}
+
+/* Modern Style */
+.date-display--modern {
+  padding: 3rem 5rem;
+  border-radius: 3rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(2rem);
+  box-shadow: 
+    0 0.8rem 3.2rem rgba(0, 0, 0, 0.15),
+    inset 0 0 0 0.1rem rgba(255, 255, 255, 0.2);
+}
+
+.date-display--modern .date-display__time {
+  font-size: 7.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, currentColor, rgba(255, 255, 255, 0.7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.date-display--modern .date-display__date {
+  font-size: 3.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, currentColor, rgba(255, 255, 255, 0.7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive Scaling */
+@media (max-aspect-ratio: 1/1) {
+  /* Square zones */
+  .date-display__time {
+    font-size: 5rem !important;
+  }
+  
+  .date-display__date {
+    font-size: 2.5rem !important;
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  /* Extreme rectangle zones */
+  .date-display__time {
+    font-size: 9rem !important;
+  }
+  
+  .date-display__date {
+    font-size: 4.5rem !important;
+  }
+}
+
+/* Overlay mode adjustments */
+.date-display--overlay .date-display {
+  padding: 2rem 3rem;
+}
+
+.date-display--overlay .date-display__time {
+  font-size: 4rem !important;
+}
+
+.date-display--overlay .date-display__date {
+  font-size: 2rem !important;
+}

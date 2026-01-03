@@ -1,0 +1,27 @@
+{
+  "name": "Date",
+  "version": "0.1.0",
+  "description": "date app",
+  "author": "Max",
+  "scripts": {
+    "dev": "tos serve",
+    "dev:direct": "vite --port 3000",
+    "build": "tsc && vite build"
+  },
+  "dependencies": {
+    "@telemetryos/sdk": "^1.8.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-router-dom": "^7.11.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^12.1.2",
+    "@telemetryos/cli": "^1.8.2",
+    "@types/node": "^22.15.3",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.2",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
+}

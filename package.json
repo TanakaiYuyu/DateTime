@@ -5,7 +5,7 @@
   "author": "Max",
   "scripts": {
     "dev": "tos serve",
-    "dev:direct": "vite --port 3000",
+    "dev:direct": "vite --port 5173",
     "build": "tsc && vite build"
   },
   "dependencies": {

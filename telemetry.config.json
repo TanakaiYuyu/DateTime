@@ -7,7 +7,7 @@
     "settings": "/settings"
   },
   "devServer": {
-    "runCommand": "vite --port 3000",
-    "url": "http://localhost:3000"
+    "runCommand": "vite --port 5173",
+    "url": "http://localhost:5173"
   }
 }

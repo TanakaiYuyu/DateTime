@@ -43,22 +43,28 @@ const isLocalDev =
 
 if (isLocalDev && !hasValidInstance) {
   // For local development, add the parameter and reload to ensure SDK reads it correctly
+  console.log('[Date App] Missing applicationInstance, adding and reloading...');
   urlParams.set('applicationInstance', generateDevInstanceId());
   const newUrl = `${window.location.pathname}?${urlParams.toString()}${window.location.hash}`;
   // Use replace to avoid adding to history
   window.location.replace(newUrl);
-  // This will cause a reload, so code below won't execute
+  // Throw to stop execution
+  throw new Error('Redirecting to add applicationInstance parameter');
 }
 
 // Configure SDK - this will now work in both local dev and TelemetryOS Studio
 // Only configure if we have a valid applicationInstance or we're not in local dev
 if (!isLocalDev || hasValidInstance) {
   try {
+    console.log('[Date App] Configuring TelemetryOS SDK with applicationInstance:', urlParams.get('applicationInstance'));
     configure('Date');
+    console.log('[Date App] SDK configured successfully');
   } catch (error) {
     console.warn('TelemetryOS SDK configuration failed:', error);
     console.info('The app will work but SDK features may be limited.');
   }
+} else {
+  console.warn('[Date App] SDK not configured - missing applicationInstance parameter');
 }
 
 // Suppress harmless TelemetryOS SDK unsubscribe timeout errors
